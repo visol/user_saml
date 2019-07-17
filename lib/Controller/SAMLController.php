@@ -160,6 +160,7 @@ class SAMLController extends Controller {
 	/**
 	 * @PublicPage
 	 * @UseSession
+	 * @NoCSRFRequired
 	 * @OnlyUnauthenticatedUsers
 	 *
 	 * @param int $idp id of the idp
