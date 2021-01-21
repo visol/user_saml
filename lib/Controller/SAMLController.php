@@ -373,6 +373,12 @@ class SAMLController extends Controller {
 			return $response;
 		}
 
+		$this->userManager->emit('\OC\User', 'samlPostLogin', [
+			$user,
+			'SAML',
+			false,
+		]);
+		
 		$originalUrl = $data['OriginalUrl'];
 		if($originalUrl !== null && $originalUrl !== '') {
 			$response = new Http\RedirectResponse($originalUrl);
